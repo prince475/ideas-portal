@@ -1,15 +1,15 @@
 
 
-import Navbar from '../components/Navbar';
+import Navbar from "../components/Navbar";
 import { Routes , Route, useNavigate} from 'react-router-dom'
 import React, { useState} from 'react'
-import IdeasPage from '../pages/IdeasPage';
+import IdeasPage from "../pages/IdeasPage";
 // import IdeasReadPage from '../pages/IdeaReadPage';
 // import CreateIdea from '../pages/CreateIdea';
 // import Footer from '../pages/Footer';
 // import AddReviewForm from '../pages/AddReviewForm';
 // import axios from 'axios';
-import Challenge from '../components/Challenge';
+import Challenge from "../components/Challenge";
 
 function App() {
 
@@ -52,12 +52,13 @@ function App() {
 
 return (
   <div className="">
-      <Navbar />
+      {/* <Navbar /> */}
       <Routes>
         {/* <Route path="/login" element={<LoginUser error={error} setIsAuthenticated={setIsAuthenticated} handleLogin={handleLogin}/>} /> */}
         {/* <Route path="/Signup" element={<SignUpUser setIsAuthenticated={setIsAuthenticated} />} /> */}
         {/* <Route path="/" element={< />} /> */}
         {/* <Route path='/reset_password' element={<ResetPassword />}/> */}
+            <Route path="/navbar" element={<Navbar />} /> 
           
             <Route path="/ideas" element={<IdeasPage />} />
             {/* <Route  path='/ideas/:id' element={< IdeasReadPage />}/> */}
