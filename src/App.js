@@ -1,6 +1,7 @@
 
 
 import Navbar from "./components/Navbar";
+import Login from "./pages/Login";
 import { Routes , Route, useNavigate} from 'react-router-dom'
 import React, { useState} from 'react'
 import IdeasPage from "./pages/IdeasPage";
@@ -59,6 +60,7 @@ return (
         {/* <Route path="/" element={< />} /> */}
         {/* <Route path='/reset_password' element={<ResetPassword />}/> */}
             <Route path="/navbar" element={<Navbar />} /> 
+            <Route path="/login" element={<Login />} /> 
           
             <Route path="/ideas" element={<IdeasPage />} />
             {/* <Route  path='/ideas/:id' element={< IdeasReadPage />}/> */}
@@ -71,25 +73,6 @@ return (
       {/* <Footer/> */}
   </div>
 );
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          {/* Edit <code>src/App.js</code> and save to reload. */}
-          Hello World
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
 }
 
 export default App;
