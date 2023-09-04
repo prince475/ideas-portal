@@ -1,15 +1,15 @@
 
 
-import Navbar from "../components/Navbar";
+import Navbar from "./components/Navbar";
 import { Routes , Route, useNavigate} from 'react-router-dom'
 import React, { useState} from 'react'
-import IdeasPage from "../pages/IdeasPage";
+import IdeasPage from "./pages/IdeasPage";
 // import IdeasReadPage from '../pages/IdeaReadPage';
 // import CreateIdea from '../pages/CreateIdea';
 // import Footer from '../pages/Footer';
 // import AddReviewForm from '../pages/AddReviewForm';
 // import axios from 'axios';
-import Challenge from "../components/Challenge";
+import Challenge from "./components/Challenge";
 
 function App() {
 
