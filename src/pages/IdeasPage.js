@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import IdeasCardList from "../components/IdeasCardList";
+import Navbar from "../components/Navbar";
 import Search from "../components/Search";
 import Sidebar from "../components/SideBar";
 import axios from "axios";
@@ -33,6 +34,10 @@ const IdeasPage = ({username, userId, sessionId}) => {
 
 
   return (
+    <>
+    <Navbar/>
+    <Challenge/>
+    {/* <IdeasCardList/> */}
     <div className="flex p-5 ">
       <div className=" ">
         <Sidebar setCategory={setCategory} />
@@ -40,9 +45,8 @@ const IdeasPage = ({username, userId, sessionId}) => {
       <div className="flex-grow ">
         <div className="flex justify-around">
           <div className="py-4">
-            <Search onSearch={handleSearch} />
+            {/* <Search onSearch={handleSearch} /> */}
           </div>
-          <Challenge/>
         </div>
         <div className=" overflow-y-auto">
           <IdeasCardList
@@ -52,8 +56,11 @@ const IdeasPage = ({username, userId, sessionId}) => {
             userId={userId}
           />
         </div>
+
       </div>
     </div>
+    
+    </>
   );
 };
 

@@ -59,6 +59,8 @@ return (
         {/* <Route path="/" element={< />} /> */}
         {/* <Route path='/reset_password' element={<ResetPassword />}/> */}
             <Route path="/navbar" element={<Navbar />} /> 
+            {/* <Route path="/login" element={<Login />} />  */}
+            
           
             <Route path="/ideas" element={<IdeasPage />} />
             {/* <Route  path='/ideas/:id' element={< IdeasReadPage />}/> */}
