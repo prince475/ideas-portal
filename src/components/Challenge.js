@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+// import jobPostImage from './jobPostImage.png'
 
 const Challenge = () => {
   const [challenge, setChallenge] = useState([]);
@@ -16,7 +17,12 @@ const Challenge = () => {
   }, []);
 
   return (
-    <div className=" text-gray-900 ">
+  <>
+    {/* <div className="flex-grow-0 flex-shrink-0 w-[1096px] h-[196px] rounded-2xl bg-cover bg-no-repeat bg-center border border-[#eaecf0]" 
+      //  style={{ backgroundImage: `url(${jobPostImage})` }} 
+    /> */}
+
+    {/* <div className=" text-gray-900 ">
       <div className="max-w-lg mx-auto px-4 py-8 bg-blue-100 rounded-lg shadow-lg">
         <h2 className="text-2xl font-bold mb-4">Challenge</h2>
         {challenge.length > 0 ? (
@@ -47,7 +53,8 @@ const Challenge = () => {
           <p>No challenge found.</p>
         )}
       </div>
-    </div>
+    </div> */}
+    </>
   );
 };
 
