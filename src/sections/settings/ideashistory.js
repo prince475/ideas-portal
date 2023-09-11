@@ -20,24 +20,7 @@ export const IdeasHistory = () => {
     setStatus(event.target.value);
     setDepartment(event.target.value);
   };
-  const useStyles = makeStyles((theme) => ({
-    textfield: {
-      padding: theme.spacing(2),
-      // Default styles
-
-      [theme.breakpoints.down("xs")]: {
-        // Styles for screens smaller than 'sm'
-        backgroundColor: "lightblue",
-      },
-
-      [theme.breakpoints.up("sm")]: {
-        // Styles for screens 'sm' and larger
-        backgroundColor: "lightgreen",
-      },
-    },
-  }));
-
-  const classes = useStyles();
+ 
 
   return (
     <div className="flex flex-col justify-start items-start gap-6">
@@ -50,7 +33,6 @@ export const IdeasHistory = () => {
               </p>
               <div className="flex justify-start items-center self-stretch flex-grow-0 flex-shrink-0 overflow-hidden gap-2 px-3.5 py-2.5">
                 <TextField
-                  className={classes.textfield}
                   id="search"
                   type="search"
                   label="Search"

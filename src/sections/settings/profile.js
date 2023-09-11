@@ -6,8 +6,8 @@ import logo from "./Avatar_1.png";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import FileUpload from "react-material-file-upload";
-import { useState } from "react";
-import "./settings.css"
+import { useState, useRef } from "react";
+import "./settings.css";
 
 export const Profile = () => {
   const [file, setFile] = useState();
@@ -15,9 +15,21 @@ export const Profile = () => {
     console.log(e.target.files);
     setFile(URL.createObjectURL(e.target.files[0]));
   }
+
+  const [selectedFile, setSelectedFile] = useState(null);
+  const fileInputRef = useRef(null);
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    setSelectedFile(file);
+  };
+
+  const handleCustomButtonClick = () => {
+    fileInputRef.current.click();
+  };
   return (
     <div className="">
-          {/* <div className="bg-sky-500 sm:max-lg:bg-black"> */}
+      {/* <div className="bg-sky-500 sm:max-lg:bg-black"> */}
 
       <div className=" flex-col justify-start items-start self-stretch flex-grow-0 flex-shrink-0 gap-6 px-8">
         <div className="flex flex-col justify-start items-start self-stretch flex-grow-0 flex-shrink-0 gap-6">
@@ -46,13 +58,16 @@ export const Profile = () => {
               </p>
             </div>
             <div className="flex justify-between items-start flex-grow-0 flex-shrink-0 w-auto">
+            {selectedFile && (
+
               <Stack direction="row" spacing={2}>
                 <Avatar
                   alt="Remy Sharp"
-                  src={file}
+                  src={URL.createObjectURL(selectedFile)}
                   sx={{ width: 80, height: 80 }}
                 />
               </Stack>
+                )}
               <div className="flex justify-start items-start flex-grow-0 flex-shrink-0 gap-4">
                 <div className="flex justify-center items-center flex-grow-0 flex-shrink-0 relative overflow-hidden gap-2">
                   <p className="flex-grow-0 flex-shrink-0 text-sm font-semibold text-left text-[#475467]">
@@ -62,22 +77,17 @@ export const Profile = () => {
                   </p>
                 </div>
                 <div className="flex justify-center items-center flex-grow-0 flex-shrink-0 relative overflow-hidden gap-2">
-                  <form>
-                    {/* <p className=" flex-grow-0 flex-shrink-0 text-sm font-semibold text-left text-[#088ab2]" html>
-                      <a
-                        href="#file-upload"
-                        class="text-[#0086C9] hover:underline dark:text-blue-500"
-                      >
-                        Update
-                      </a>
-                    </p> */}
-                    <div>
-                    <lable htmlFor="imgs">Update </lable>
-                    </div>
-                    {/* <input type="file" onChange={handleChange}  id="imgs"/> */}
-                    <input type="file" id="imgs"/>
 
-                  </form>
+                      <input
+                        type="file"
+                        accept="image/*"
+                        onChange={handleFileChange}
+                        ref={fileInputRef}
+                        style={{ display: "none" }} // Hide the file input
+                      />
+                      <button className=" flex-grow-0 flex-shrink-0 text-sm font-semibold text-left text-[#088ab2]" onClick={handleCustomButtonClick}>
+                        Update
+                      </button>
                 </div>
               </div>
             </div>
@@ -110,7 +120,7 @@ export const Profile = () => {
               </div>
             </div>
             <div className="self-stretch flex-grow-0 flex-shrink-0 h-px bg-[#eaecf0]" />
-            
+
             <div className="flex justify-start items-start self-stretch flex-grow-0 flex-shrink-0 gap-8">
               <div className="flex flex-col justify-start items-start flex-grow-0 flex-shrink-0 w-[280px] relative">
                 <p className="self-stretch flex-grow-0 flex-shrink-0 w-[280px] text-sm font-semibold text-left text-[#344054]">
@@ -170,7 +180,6 @@ export const Profile = () => {
             </Button>
           </Stack>
         </div>
-        
       </div>
     </div>
   );
