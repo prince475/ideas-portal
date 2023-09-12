@@ -1,9 +1,12 @@
 
 
 import Navbar from "./components/Navbar";
+import Login from "./pages/Login";
 import { Routes , Route, useNavigate} from 'react-router-dom'
 import React, { useState} from 'react'
 import IdeasPage from "./pages/IdeasPage";
+import Page from "./pages/settings";
+
 // import IdeasReadPage from '../pages/IdeaReadPage';
 // import CreateIdea from '../pages/CreateIdea';
 // import Footer from '../pages/Footer';
@@ -61,8 +64,11 @@ return (
             <Route path="/navbar" element={<Navbar />} /> 
             {/* <Route path="/login" element={<Login />} />  */}
             
+            <Route path="/login" element={<Login />} /> 
           
             <Route path="/ideas" element={<IdeasPage />} />
+            <Route path="/settings" element={<Page />}/>
+
             {/* <Route  path='/ideas/:id' element={< IdeasReadPage />}/> */}
             {/* <Route  path='/createidea' element={< CreateIdea />}/> */}
             <Route path="/challenge" element={<Challenge />}/>

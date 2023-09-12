@@ -39,7 +39,7 @@ const IdeasPage = ({username, userId, sessionId}) => {
     <Challenge/>
     {/* <IdeasCardList/> */}
     <div className="flex p-5 ">
-      <div className=" ">
+      <div className="">
         <Sidebar setCategory={setCategory} />
       </div>
       <div className="flex-grow ">
