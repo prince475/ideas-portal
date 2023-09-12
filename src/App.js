@@ -1,6 +1,7 @@
 
 
 import Navbar from "./components/Navbar";
+import Login from "./pages/Login";
 import { Routes , Route, useNavigate} from 'react-router-dom'
 import React, { useState} from 'react'
 import IdeasPage from "./pages/IdeasPage";
@@ -63,6 +64,7 @@ return (
             <Route path="/navbar" element={<Navbar />} /> 
             {/* <Route path="/login" element={<Login />} />  */}
             
+            <Route path="/login" element={<Login />} /> 
           
             <Route path="/ideas" element={<IdeasPage />} />
             <Route path="/settings" element={<Page />}/>
