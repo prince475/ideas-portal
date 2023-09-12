@@ -4,6 +4,8 @@ import Navbar from "./components/Navbar";
 import { Routes , Route, useNavigate} from 'react-router-dom'
 import React, { useState} from 'react'
 import IdeasPage from "./pages/IdeasPage";
+import SingleIdeas from "./pages/SingleIdea";
+
 import Page from "./pages/settings";
 
 // import IdeasReadPage from '../pages/IdeaReadPage';
@@ -68,6 +70,8 @@ return (
             {/* <Route  path='/ideas/:id' element={< IdeasReadPage />}/> */}
             {/* <Route  path='/createidea' element={< CreateIdea />}/> */}
             <Route path="/challenge" element={<Challenge />}/>
+            <Route path="/singleidea" element={<SingleIdeas />}/>
+
           
         
 
